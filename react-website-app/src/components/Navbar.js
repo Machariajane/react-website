@@ -34,7 +34,7 @@ window.addEventListener('resize',showButton);
        <div className="navbar-container container">
            <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
                <MdFingerprint className='navbar-icon' />
-               LAVISH
+               Got-ya-id
            </Link>
            <div className="menu-icon" onClick={handleClick}>
                 {click ? <FaTimes /> : <FaBars /> }
@@ -42,28 +42,28 @@ window.addEventListener('resize',showButton);
           <ul className = { click ? 'nav-menu active': 'nav-menu'}>
                 <li className = "nav_item">
                     <Link to = '/' className = "nav-links" onClick={closeMobileMenu}>
-                        Home
+                       Home
                     </Link>
                 </li>
                 <li className = "nav_item">
                     <Link to = '/services' className = "nav-links" onClick={closeMobileMenu}>
-                        Services
+                        Find Id
                     </Link>
                 </li>
                 <li className = "nav_item">
                     <Link to = '/products' className = "nav-links" onClick={closeMobileMenu}>
-                        Products
+                        Post Id
                     </Link>
                 </li>
                 <li className = "nav-btn">
                     {button ? (
-                        <Link to = '/sign-up' className = "btn-link">
-                            <Button buttonStyle = 'btn--outline'>SIGN UP</Button>
+                        <Link to = '/register' className = "btn-link">
+                            <Button buttonStyle = 'btn--outline'>REGISTER</Button>
                         </Link>
                     ) : (
-                        <Link to = '/sign-up' className='btn-link' onClick={closeMobileMenu}>
+                        <Link to = '/register' className='btn-link' onClick={closeMobileMenu}>
                                 <Button buttonStyle = 'btn--outline' buttonSize = 'btn--mobile'> 
-                                     SIGN UP 
+                                     REGISTER  
                                 </Button>
 
                         </Link>
