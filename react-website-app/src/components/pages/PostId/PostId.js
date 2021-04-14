@@ -1,16 +1,15 @@
 import React from 'react';
 import HeroSection from '../../HeroSection';
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
-import Pricing from '../../Pricing';
 
-function Services() {
+
+function PostId() {
   return (
     <>
-      <Pricing />
       <HeroSection {...homeObjOne} />
-      <HeroSection {...homeObjThree} />
+      <HeroSection {...homeObjTwo} />
     </>
   );
 }
 
-export default Services;
+export default PostId;

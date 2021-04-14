@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useEffect,useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import axios from 'axios' ;
 
 function Copyright() {
   return (
@@ -48,8 +49,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const [firstname, setFname] = useState('');
+  const [lastname, setLname] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  return (
+// const handleSubmit = e => {
+//   e.preventDefault();
+  
+// }
+const handleSubmit = async () =>{ 
+  
+  const res = await axios.post('https://got-ya-id.herokuapp.com/api/auth',{
+  username,email,password
+  })
+}
+
+return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -59,7 +76,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -70,6 +87,11 @@ export default function SignUp() {
                 fullWidth
                 id="firstName"
                 label="First Name"
+                value={firstname}
+                onChange={e => {
+                  setFname(e.target.value);
+                }}
+             
                 autoFocus
               />
             </Grid>
@@ -81,7 +103,28 @@ export default function SignUp() {
                 id="lastName"
                 label="Last Name"
                 name="lastName"
+                value={lastname}
+                onChange={e => {
+                  setLname(e.target.value);
+                }}
+              
                 autoComplete="lname"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="username"
+                label="Username"
+                name="username"
+                value={username}
+                onChange={e => {
+                  setUsername(e.target.value);
+                }}
+              
+                autoComplete="username"
               />
             </Grid>
             <Grid item xs={12}>
@@ -92,6 +135,11 @@ export default function SignUp() {
                 id="email"
                 label="Email Address"
                 name="email"
+                value={email}
+                onChange={e => {
+                  setEmail(e.target.value);
+                }}
+               
                 autoComplete="email"
               />
             </Grid>
@@ -104,6 +152,11 @@ export default function SignUp() {
                 label="Password"
                 type="password"
                 id="password"
+                value={password}
+                onChange={e => {
+                  setPassword(e.target.value);
+                }}
+                
                 autoComplete="current-password"
               />
             </Grid>
@@ -113,7 +166,7 @@ export default function SignUp() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color= "primary"
             className={classes.submit}
           >
             Sign Up

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Home from './components/pages/HomePage/Home';
-import Services from './components/pages/Services/Services';
-import Products from './components/pages/Products/Products';
+import FindId from './components/pages/FindId/FindId';
+import PostId from './components/pages/PostId/PostId';
 import Register from './components/pages/SignUp/Register';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -15,8 +15,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/services' component={Services} />
-        <Route path='/products' component={Products} />
+        <Route path='/findid' component={FindId} />
+        <Route path='/postid' component={PostId} />
         <Route path='/register' component={Register} />
         <Route path= '/login' component={LogIn} />
       </Switch>

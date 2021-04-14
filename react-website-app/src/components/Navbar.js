@@ -46,12 +46,12 @@ window.addEventListener('resize',showButton);
                     </Link>
                 </li>
                 <li className = "nav_item">
-                    <Link to = '/services' className = "nav-links" onClick={closeMobileMenu}>
+                    <Link to = '/findid' className = "nav-links" onClick={closeMobileMenu}>
                         Find Id
                     </Link>
                 </li>
                 <li className = "nav_item">
-                    <Link to = '/products' className = "nav-links" onClick={closeMobileMenu}>
+                    <Link to = '/postid' className = "nav-links" onClick={closeMobileMenu}>
                         Post Id
                     </Link>
                 </li>
