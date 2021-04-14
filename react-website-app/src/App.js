@@ -1,28 +1,34 @@
 import React from 'react';
 import './App.css';
-import Home from './components/pages/HomePage/Home';
-import FindId from './components/pages/FindId/FindId';
-import PostId from './components/pages/PostId/PostId';
-import Register from './components/pages/SignUp/Register';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/pages/Footer/Footer';
-import LogIn from './components/pages/SignUp/LogIn';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/findid' component={FindId} />
-        <Route path='/postid' component={PostId} />
-        <Route path='/register' component={Register} />
-        <Route path= '/login' component={LogIn} />
-      </Switch>
-      <Footer />
-    </Router>
-  );
+    <div className="App">
+      <nav className='navbar navbar-expand navbar-light fixed-top'>
+        <div className='container'>
+            <a href = "" className='navbar-brand'>Home</a>
+            <div className='collapse navbar-collapse'>
+             <ul className='navbar-nav ml-auto'>
+                <li className='nav-item'>
+                   <a href="/" className='nav-link'>Log-In</a>
+                </li>
+                <li className='nav-item'>
+                   <a href="/" className='nav-link'>Sign Up</a>
+                </li>
+              </ul>
+
+            </div>
+        </div>
+
+      </nav>
+      <div className='auth-wrapper'>
+           <div className='auth-inner'>
+               <h2>You are not logged in</h2>
+           </div>
+      </div>
+    </div>
+  )
 }
 
-export default App;
+export default App
